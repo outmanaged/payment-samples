@@ -25,14 +25,14 @@
     </section>
     <section class="section ">
         <div class="container">
-            <button class="button is-link" onclick="pay('카드',jsons.card);">간편결제</button>
+            <button class="button is-link" onclick="pay('카드',jsons.card);">카드사결제창</button>
         </div>
     </section>
 </body>
 
 <script>
     let amount = 50000;
-    let easyPay = "SAMSUNGPAY";
+    let cardCompany = "삼성";
 
     let tossPayments = TossPayments("test_ck_OEP59LybZ8Bdv6A1JxkV6GYo7pRe");
 
@@ -51,8 +51,8 @@
     }
 
     let path = "/";
-    let successUrl = window.location.origin + path + "/success.php";
-    let failUrl = window.location.origin + path + "/fail.php";
+    let successUrl = window.location.origin + path + "/success.jsp";
+    let failUrl = window.location.origin + path + "/fail.jsp";
     let orderId = new Date().getTime();
 
     let jsons = {
@@ -62,7 +62,7 @@
             "orderName": "토스 티셔츠 외 2건",
             "successUrl": successUrl,
             "failUrl": failUrl,
-            "cardCompany": null,
+            "cardCompany": cardCompany,
             "cardInstallmentPlan": null,
             "maxCardInstallmentPlan": null,
             "useCardPoint": false,
@@ -73,8 +73,7 @@
             "useInternationalCardOnly": false,
             "flowMode": "DIRECT",
             "discountCode": null,
-            "appScheme": null,
-            "easyPay": easyPay
+            "appScheme": null
         }
 
 
