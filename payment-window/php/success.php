@@ -9,7 +9,8 @@ $amount = $_GET['amount'];
 
 $secretKey = 'test_ak_ZORzdMaqN3wQd5k6ygr5AkYXQGwy'; 
 
-$url = 'https://api.tosspayments.com/v1/payments/' . $paymentKey;
+
+$url = 'https://api.tosspayments.com/v1/payments/' . urlencode($paymentKey);
 
 $data = ['orderId' => $orderId, 'amount' => $amount];
 

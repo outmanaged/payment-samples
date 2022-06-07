@@ -12,6 +12,7 @@
 <%@ page import="java.io.InputStreamReader" %>
 <%@ page import="java.io.Reader" %>
 <%@ page import="java.nio.charset.StandardCharsets" %>
+<%@ page import="java.net.URLEncoder" %>
 
 
 <%
@@ -25,6 +26,8 @@
   Encoder encoder = Base64.getEncoder(); 
   byte[] encodedBytes = encoder.encode(secretKey.getBytes("UTF-8"));
   String authorizations = "Basic "+ new String(encodedBytes, 0, encodedBytes.length);
+
+  paymentKey = URLEncoder.encode(paymentKey, StandardCharsets.UTF_8);
   
   URL url = new URL("https://api.tosspayments.com/v1/payments/" + paymentKey);
   
