@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set("display_errors", true);
 
 
-$orderId = "billing-" . time()*1000;
+$orderId = "keyin-" . time()*1000;
 $amount = 50000;
 $cardNumber = "";
 $cardExpirationYear = "";

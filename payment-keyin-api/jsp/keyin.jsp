@@ -17,7 +17,7 @@
 <%
 
 
-  String orderId = "billing-" + String.valueOf(System.currentTimeMillis());
+  String orderId = "keyin-" + String.valueOf(System.currentTimeMillis());
   String amount = "50000";
   String cardNumber = "5450898000198151";
   String cardExpirationYear = "26";
