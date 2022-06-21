@@ -50,11 +50,9 @@ router.get("/keyin", function (req, res) {
       });
     })
     .catch(function (error) {
-      console.log(error);
-
       res.render("keyin", {
         isSuccess: false,
-        responseJson: response.body,
+        rresponseJson: error.response.body,
       });
     });
 });

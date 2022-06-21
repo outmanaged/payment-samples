@@ -16,8 +16,8 @@
         <p>orderName : <%= responseJson.orderName %></p>
         <p>method : <%= responseJson.method %></p>
 
-        <p>card -> number : <%= responseJson.card.number %>
 
+        <p>cancels -> cancelReason : <?php echo responseJson.cancels[0].cancelReason ?></p>
         </p>
 
         <% } else { %>

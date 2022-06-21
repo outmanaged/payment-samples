@@ -37,10 +37,9 @@ router.get("/success", function (req, res) {
       });
     })
     .catch(function (error) {
-      console.log(error);
       res.render("success", {
         isSuccess: false,
-        responseJson: response.body,
+        responseJson: error.response.body,
       });
     });
 });

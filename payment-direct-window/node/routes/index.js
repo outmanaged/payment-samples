@@ -41,7 +41,7 @@ router.get("/success", function (req, res) {
 
       res.render("keyin", {
         isSuccess: false,
-        responseJson: response.body,
+        responseJson: error.response.body,
       });
     });
 });
