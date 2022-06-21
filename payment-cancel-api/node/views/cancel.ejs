@@ -2,7 +2,7 @@
 <html lang="ko">
 
 <head>
-    <title>결제 성공</title>
+    <title>취소 성공</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 </head>
@@ -11,17 +11,17 @@
     <section>
 
         <%  if (isSuccess) { %>
-        <h1>결제 성공</h1>
+        <h1>취소 성공</h1>
         <p>결과 데이터 : <%= JSON.stringify(responseJson) %></p>
         <p>orderName : <%= responseJson.orderName %></p>
         <p>method : <%= responseJson.method %></p>
 
 
-        <p>cancels -> cancelReason : <?php echo responseJson.cancels[0].cancelReason ?></p>
+        <p>cancels -> cancelReason : <%= responseJson.cancels[0].cancelReason %></p>
         </p>
 
         <% } else { %>
-        <h1>결제 실패</h1>
+        <h1>취소 실패</h1>
         <p>에러메시지 : <%= responseJson.message %></p>
         <span>에러코드: <%= responseJson.code %></span>
         <% } %>

@@ -7,7 +7,7 @@ var router = express.Router();
 var secretKey = "test_ak_ZORzdMaqN3wQd5k6ygr5AkYXQGwy";
 
 router.get("/cancel", function (req, res) {
-  let paymentKey = "2WkABYDxNyJQbgMGZzorzQbpRBkAvVl5E1em4dKva7XL9njP";
+  let paymentKey = "";
   let cancelReason = "고객 변심";
 
   //부분 취소에서만 사용
@@ -38,7 +38,7 @@ router.get("/cancel", function (req, res) {
             accountNumber: accountNumber,
             holderName: holderName,
           },
-          //refundableAmount: refundableAmount,
+          refundableAmount: refundableAmount,
         },
         responseType: "json",
       }

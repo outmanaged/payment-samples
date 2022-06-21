@@ -55,11 +55,9 @@ router.get("/virtual_account", function (req, res) {
       });
     })
     .catch(function (error) {
-      console.log(error);
-
       res.render("virtual_account", {
         isSuccess: false,
-        responseJson: response.body,
+        responseJson: error.response.body,
       });
     });
 });
