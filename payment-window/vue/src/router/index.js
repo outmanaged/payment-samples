@@ -1,13 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import successView from '../views/successPage.vue'
-import appView from '../App.vue'
 
 const routes = [
-  {
-    path: '/',
-    name: 'index',
-    component: appView
-  },
   {
     path: '/success',
     name: 'success',
