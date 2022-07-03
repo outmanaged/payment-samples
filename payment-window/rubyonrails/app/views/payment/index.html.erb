@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>구매하기</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <%= stylesheet_link_tag "bulma.min" %>
+
+    <script src="https://js.tosspayments.com/v1"></script>
+</head>
+
+<body>
+
+    <section class="hero is-link">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    결제(일반)
+                </h1>
+
+            </div>
+        </div>
+    </section>
+    <section class="section ">
+        <div class="container">
+            <button class="button is-link" onclick="location.href='/payment/window';">결제창</button>
+            <button class="button is-link" onclick="location.href='/payment/easypay';">간편결제</button>
+            <button class="button is-link" onclick="location.href='/payment/direct';">리셀러 직호출</button>
+            <button class="button is-link" onclick="location.href='/payment/vaapi';">가상계좌(API)</button>
+            <button class="button is-link" onclick="location.href='/payment/keyinapi';">카드정보(API)</button>
+            <button class="button is-link" onclick="location.href='/payment/inquiryapi';">결제조회(API)</button>
+            <button class="button is-link" onclick="location.href='/payment/cancelapi';">취소(API)</button>
+        </div>
+    </section>
+</body>
+
+</html>
