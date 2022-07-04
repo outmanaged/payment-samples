@@ -22,7 +22,7 @@ class PaymentController < ApplicationController
       }.to_json
     }
       
-	  begin
+    begin
       response = HTTParty.post("https://api.tosspayments.com/v1/virtual-accounts", options).parsed_response
       @Response = response
     end      
