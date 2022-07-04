@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
     # add code
     root "home#index"
-    get "home/index" => "home#index"
     get 'payment/index' => 'payment#index'
     
     get 'payment/window' => 'payment#window'
