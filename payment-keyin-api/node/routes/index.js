@@ -7,7 +7,7 @@ var router = express.Router();
 var secretKey = "test_ak_ZORzdMaqN3wQd5k6ygr5AkYXQGwy";
 
 router.get("/keyin", function (req, res) {
-  let orderId = "billing-" + uuid();
+  let orderId = "keyin-" + uuid();
   let amount = 50000;
   let cardNumber = "";
   let cardExpirationYear = "";
