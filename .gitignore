@@ -6,3 +6,5 @@ payment-easypay-window/node/node_modules/
 payment-inquiry-api/node/node_modules/
 payment-keyin-api/node/node_modules/
 payment-virtualaccount-api/node/node_modules/
+payment-window/vue/dist/
+payment-window/vue/node_modules/
