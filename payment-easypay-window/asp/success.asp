@@ -3,8 +3,8 @@
 
 <!DOCTYPE html>
 
-<!--#include file="json2.asp"--> 
-<!--#include file="base64.asp"--> 
+<!--#include file="json2.asp"-->
+<!--#include file="base64.asp"-->
 
 <%
 	
@@ -15,11 +15,11 @@ amount	= trim(request("amount"))
 
 secretkey = "test_ak_ZORzdMaqN3wQd5k6ygr5AkYXQGwy:"
 
-url = "https://api.tosspayments.com/v1/payments/" & paymentKey
+url = "https://api.tosspayments.com/v1/payments/"
 
 
 
-data = "{""orderId"" : """ & orderId & """, ""amount"" : """ & amount & """}"
+data = "{""paymentKey"" : """ & paymentKey & """,""orderId"" : """ & orderId & """, ""amount"" : """ & amount & """}"
 
 authorization = "Basic " & base64Encode(secretkey)
 
@@ -38,15 +38,17 @@ httpCode = req.status
 
 
 <html lang="ko">
+
 <head>
     <title>결제 성공</title>
     <meta charset="UTF-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 </head>
+
 <body>
-<section>
-    <%
+    <section>
+        <%
         if httpCode=200  then %>
         <h1>결제 성공</h1>
         <p>결과 데이터 : <%= req.responseText %></p>
@@ -57,17 +59,18 @@ httpCode = req.status
             <% if myJSON.method = "가상계좌"  then response.write myJSON.virtualAccount.accountNumber end if %>
             <% if myJSON.method = "계좌이체"  then response.write myJSON.transfer.bank end if %>
             <% if myJSON.method = "휴대폰"  then response.write myJSON.mobilePhone.customerMobilePhone end if %>
-            
+
         </p>
-       <%
+        <%
      else  %>
         <h1>결제 실패</h1>
-        <p>에러메시지 :  <%= myJSON.message%></p>
-        <span>에러코드:  <%= myJSON.code%></span>
-       <%
+        <p>에러메시지 : <%= myJSON.message%></p>
+        <span>에러코드: <%= myJSON.code%></span>
+        <%
     end if
     %>
 
-</section>
+    </section>
 </body>
+
 </html>

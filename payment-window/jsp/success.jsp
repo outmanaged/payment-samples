@@ -29,7 +29,7 @@
 
   paymentKey = URLEncoder.encode(paymentKey, StandardCharsets.UTF_8);
   
-  URL url = new URL("https://api.tosspayments.com/v1/payments/" + paymentKey);
+  URL url = new URL("https://api.tosspayments.com/v1/payments/");
   
   HttpURLConnection connection = (HttpURLConnection) url.openConnection();
   connection.setRequestProperty("Authorization", authorizations);
@@ -37,6 +37,7 @@
   connection.setRequestMethod("POST");
   connection.setDoOutput(true);
   JSONObject obj = new JSONObject();
+  obj.put("paymentKey", paymentKey);
   obj.put("orderId", orderId);
   obj.put("amount", amount);
   

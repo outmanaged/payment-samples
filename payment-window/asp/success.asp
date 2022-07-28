@@ -15,11 +15,11 @@ amount	= trim(request("amount"))
 
 secretkey = "test_ak_ZORzdMaqN3wQd5k6ygr5AkYXQGwy:"
 
-url = "https://api.tosspayments.com/v1/payments/" & Server.UrlEncode(paymentKey)
+url = "https://api.tosspayments.com/v1/payments/"
 
 
 
-data = "{""orderId"" : """ & orderId & """, ""amount"" : """ & amount & """}"
+data = "{""paymentKey"" : """ & paymentKey & """, ""orderId"" : """ & orderId & """, ""amount"" : """ & amount & """}"
 
 authorization = "Basic " & base64Encode(secretkey)
 

@@ -12,22 +12,19 @@ router.get("/", function (req, res) {
 
 router.get("/success", function (req, res) {
   got
-    .post(
-      "https://api.tosspayments.com/v1/payments/" +
-        encodeURIComponent(req.query.paymentKey),
-      {
-        headers: {
-          Authorization:
-            "Basic " + Buffer.from(secretKey + ":").toString("base64"),
-          "Content-Type": "application/json",
-        },
-        json: {
-          orderId: req.query.orderId,
-          amount: req.query.amount,
-        },
-        responseType: "json",
-      }
-    )
+    .post("https://api.tosspayments.com/v1/payments/", {
+      headers: {
+        Authorization:
+          "Basic " + Buffer.from(secretKey + ":").toString("base64"),
+        "Content-Type": "application/json",
+      },
+      json: {
+        paymentKey: req.query.paymentKey,
+        orderId: req.query.orderId,
+        amount: req.query.amount,
+      },
+      responseType: "json",
+    })
     .then(function (response) {
       console.log(response.body);
 
