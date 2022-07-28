@@ -15,7 +15,7 @@ amount	= trim(request("amount"))
 
 secretkey = "test_ak_ZORzdMaqN3wQd5k6ygr5AkYXQGwy:"
 
-url = "https://api.tosspayments.com/v1/payments/"
+url = "https://api.tosspayments.com/v1/payments/confirm"
 
 
 

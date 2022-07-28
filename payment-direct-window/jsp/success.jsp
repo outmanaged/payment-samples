@@ -26,7 +26,7 @@
   byte[] encodedBytes = encoder.encode(secretKey.getBytes("UTF-8"));
   String authorizations = "Basic "+ new String(encodedBytes, 0, encodedBytes.length);
   
-  URL url = new URL("https://api.tosspayments.com/v1/payments/");
+  URL url = new URL("https://api.tosspayments.com/v1/payments/confirm");
   
   HttpURLConnection connection = (HttpURLConnection) url.openConnection();
   connection.setRequestProperty("Authorization", authorizations);
