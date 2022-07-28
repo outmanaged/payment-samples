@@ -4,22 +4,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag "bulma.min" %>
       
-  <title>조회 성공 (Ruby On Rails)</title>
+  <title>결제 성공 (Ruby On Rails)</title>
 </head>
     
 <body>
     
 <section>
-    <h1>조회 성공</h1>
+    <h1>결제 성공</h1>
     
     <p>결과 데이터 : </p>
     <pre><%= JSON.pretty_generate(@Response) %></pre>
     <br><br>
     
-    <p>orderName : <%=@Response["orderName"]%></p>
-    <p>method : <%=@Response["method"]%></p>
+    <p>금액 : <%=@amount%></p>
+    <p>영수증 : <%=@receipt_url%></p>
     <br><br>
+    
+    <p>paymentKey : <%= @Response["paymentKey"] %></p>
+    <p>easyPay : <%= @Response["easyPay"] %></p>
+    <br>
     
 </section> 
 
