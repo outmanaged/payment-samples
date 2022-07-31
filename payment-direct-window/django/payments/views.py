@@ -9,10 +9,10 @@ def index(request):
     'payments/index.html',
   )
 
-def window(request):
+def direct(request):
   return render(
     request,
-    'payments/window.html',
+    'payments/direct.html',
   )
 
 def success(request):

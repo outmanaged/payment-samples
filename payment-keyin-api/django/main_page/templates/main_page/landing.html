@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" type="text/css" href="{% static 'payments/bulma/bulma.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'main_page/bulma/bulma.min.css' %}"/>
 
     <script src="https://js.tosspayments.com/v1"></script>
 </head>
@@ -18,7 +18,7 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    결제(일반)
+                    토스페이먼츠 연동 샘플
                 </h1>
 
             </div>
@@ -26,9 +26,12 @@
     </section>
     <section class="section ">
         <div class="container">
-            <button class="button is-link" onclick="location.href='/payments/window';">결제창</button>
+            <button class="button is-link" onclick="location.href='/payments/';">결제(일반)</button>
+            <button class="button is-link" onclick="location.href='/billing/';">빌링</button>
+            <button class="button is-link" onclick="location.href='/apis/';">추가기능 API</button>
         </div>
     </section>
+
 </body>
 
 </html>

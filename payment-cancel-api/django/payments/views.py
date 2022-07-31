@@ -1,0 +1,65 @@
+from django.shortcuts import render
+ 
+import requests, json, base64, time
+
+# Create your views here.
+def index(request):
+  return render(
+    request,
+    'payments/index.html',
+  )
+
+def cancelapi(request):
+  datetime = int(time.time())
+  paymentKey = ""
+      
+  #부분 취소에서만 사용
+  cancelAmount = 300
+      
+  #refundReceiveAccount - 가상계좌 거래에 대해 입금후에 취소하는 경우만 필요
+  bank = "국민"
+  accountNumber = "12345678901234"
+  holderName = "홍길동"
+
+	#중복 취소를 막기위해 취소 가능금액을 전송
+  refundableAmount = 300
+  
+  url = "https://api.tosspayments.com/v1/payments/"
+  secertkey = "test_sk_D4yKeq5bgrpKRd0JYbLVGX0lzW6Y"
+  userpass = secertkey + ':'
+  encoded_u = base64.b64encode(userpass.encode()).decode()
+  
+  headers = {
+    "Authorization" : "Basic %s" % encoded_u,
+    "Content-Type": "application/json"
+  }
+  
+  params = {
+    "cancelReason": "고객 변심",
+    "cancelAmount": cancelAmount,
+    #"refundReceiveAccount": {
+    #    "bank": bank,
+    #    "accountNumber": accountNumber,
+    #    "holderName": holderName
+    #    }
+    #"refundableAmount": refundableAmount
+  }
+  
+  res = requests.post(url+paymentKey+"/cancel", data=json.dumps(params), headers=headers)
+  resjson = res.json()
+
+  orderName = resjson["orderName"]
+  method = resjson["method"]
+  cancelReason = resjson["cancels"][0]["cancelReason"]
+  
+  return render(
+    request,
+    "payments/cancelapi.html",
+    {
+      "res" : res,
+      "orderName" : orderName,
+      "method" : method,
+      "cancelReason" : cancelReason,
+      
+    }
+  )
