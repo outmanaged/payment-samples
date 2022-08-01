@@ -24,12 +24,13 @@ def inquiryapi(request):
   
   res = requests.get(url+paymentKey, headers=headers)
   resjson = res.json()
+  pretty = json.dumps(resjson, indent=4)
   
   return render(
     request,
     "payments/inquiryapi.html",
     {
-      "res" : res,
+      "res" : pretty,
       
     }
   )

@@ -38,6 +38,7 @@ def success(request):
   
   res = requests.post(url, data=json.dumps(params), headers=headers)
   resjson = res.json()
+  pretty = json.dumps(resjson, indent=4)
 
   respaymentKey = resjson["paymentKey"]
   resorderId = resjson["orderId"]
@@ -48,7 +49,7 @@ def success(request):
     request,
     "payments/success.html",
     {
-      "res" : res,
+      "res" : pretty,
       "respaymentKey" : respaymentKey,
       "resorderId" : resorderId,
       "rescardcom" : rescardcom,

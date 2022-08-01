@@ -47,6 +47,7 @@ def cancelapi(request):
   
   res = requests.post(url+paymentKey+"/cancel", data=json.dumps(params), headers=headers)
   resjson = res.json()
+  pretty = json.dumps(resjson, indent=4)
 
   orderName = resjson["orderName"]
   method = resjson["method"]
@@ -56,7 +57,7 @@ def cancelapi(request):
     request,
     "payments/cancelapi.html",
     {
-      "res" : res,
+      "res" : pretty,
       "orderName" : orderName,
       "method" : method,
       "cancelReason" : cancelReason,

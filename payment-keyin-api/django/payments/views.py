@@ -37,6 +37,7 @@ def keyinapi(request):
   
   res = requests.post(url, data=json.dumps(params), headers=headers)
   resjson = res.json()
+  pretty = json.dumps(resjson, indent=4)
 
   method = resjson["method"]
   number = resjson["card"]["number"]
@@ -45,7 +46,7 @@ def keyinapi(request):
     request,
     "payments/keyinapi.html",
     {
-      "res" : res,
+      "res" : pretty,
       "method" : method,
       "number" : number,
       

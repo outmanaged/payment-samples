@@ -37,6 +37,7 @@ def vaapi(request):
   
   res = requests.post(url, data=json.dumps(params), headers=headers)
   resjson = res.json()
+  pretty = json.dumps(resjson, indent=4)
 
   accountNumber = resjson["virtualAccount"]["accountNumber"]
   bank = resjson["virtualAccount"]["bank"]
@@ -45,7 +46,7 @@ def vaapi(request):
     request,
     "payments/vaapi.html",
     {
-      "res" : res,
+      "res" : pretty,
       "accountNumber" : accountNumber,
       "bank" : bank,
       
