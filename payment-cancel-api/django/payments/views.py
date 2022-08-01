@@ -47,7 +47,7 @@ def cancelapi(request):
   
   res = requests.post(url+paymentKey+"/cancel", data=json.dumps(params), headers=headers)
   resjson = res.json()
-  pretty = json.dumps(resjson, indent=4)
+  pretty = json.dumps(resjson, indent=4, ensure_ascii=False)
 
   orderName = resjson["orderName"]
   method = resjson["method"]

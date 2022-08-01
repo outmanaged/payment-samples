@@ -24,7 +24,7 @@ def inquiryapi(request):
   
   res = requests.get(url+paymentKey, headers=headers)
   resjson = res.json()
-  pretty = json.dumps(resjson, indent=4)
+  pretty = json.dumps(resjson, indent=4, ensure_ascii=False)
   
   return render(
     request,
