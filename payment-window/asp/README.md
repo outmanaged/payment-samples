@@ -1,8 +1,10 @@
-# ASP-sample
+# payment-window/asp
 
-Toss Payments 결제연동 ASP 샘플 코드입니다. 
+ASP 를 이용한 결제창 샘플입니다.
+
+
 
 ## 테스트
+로컬에 IIS를 설치하고 ASP 관련 설정을 완료한후 
 
-로컬 서버 실행 이후,
 http://127.0.0.1/index.html 주소에서 테스트 가능합니다.
