@@ -1,4 +1,4 @@
-# payment-window/JSP
+# payment-window/jsp
 
 JSP 를 이용한 결제창 샘플입니다.
 
