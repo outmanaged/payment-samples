@@ -1,11 +1,9 @@
-# payment-direct-window
+# 앱카드 연동 샘플
 
+결제창에서 앱카드를 바로 열 수 있는 연동 샘플입니다. 각 폴더에서 언어별 샘플을 확인할 수 있습니다.
 
+앱카드를 연동하면 설정한 카드사 코드에 따라 각 카드사의 인증 화면을 바로 띄울 수 있습니다.
 
-카드앱 바로 열기 샘플입니다.  
+## 연동 문서
 
-(https://docs.tosspayments.com/guides/windows/card-direct)
-
-각 프로그래밍 언어 폴더에서 해당 언어의 샘플을 확인할 수 있습니다. 
-
-설정한 카드사 코드에 따라 각 카드사의 인증 화면을 바로 띄울 수 있습니다. 
+- [앱카드 결제 연동 가이드](https://docs.tosspayments.com/guides/windows/card-direct)
