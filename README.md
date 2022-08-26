@@ -1,27 +1,23 @@
-# payment-samples
+# 토스페이먼츠 결제 연동 샘플 프로젝트
 
-결제 관련 샘플들 입니다
+토스페이먼츠에서 제공하는 API로 연동할 수 있는 기능을 샘플 프로젝트로 시작해보세요. 
 
+각 레포지토리에서 프로그래밍 언어 별 샘플을 확인할 수 있습니다.
 
---------------------------------
+- [`/payment-cancel-api`](https://github.com/tosspayments/payment-samples/tree/main/payment-cancel-api): 결제 취소 API 연동 샘플
 
-payment-cancel-api : 결제 취소 API 샘플입니다.   
-  (https://docs.tosspayments.com/reference#결제-취소)
+- [`/payment-direct-window`](https://github.com/tosspayments/payment-samples/tree/main/payment-direct-window): 앱카드 결제 연동 샘플
 
-payment-direct-window : 카드앱 바로 열기 샘플입니다.  
-  (https://docs.tosspayments.com/guides/windows/card-direct)
+- [`/payment-easypay-window`](https://github.com/tosspayments/payment-samples/tree/main/payment-easypay-window): 간편결제 연동 샘플
 
-payment-easypay-window : 간편결제 샘플입니다.  
-  (https://docs.tosspayments.com/guides/windows/easypay)
+- [`/payment-inquiry-api`](https://github.com/tosspayments/payment-samples/tree/main/payment-inquiry-api): 결제 조회 API 연동 샘플
+
+- [`/payment-keyin-api`](https://github.com/tosspayments/payment-samples/tree/main/payment-keyin-api): 카드 번호 결제 API 연동 샘플
   
-payment-inquiry-api : paymentKey로 결제조회 API 샘플입니다.  
-  (https://docs.tosspayments.com/reference#paymentkey로-결제-조회)
-  
-payment-keyin-api : 카드 번호 결제 API 샘플입니다.  
-  (https://docs.tosspayments.com/reference#카드-번호-결제)
-  
-payment-virtualaccount-api : 가상계좌 발급요청 API 샘플입니다.  
-  (https://docs.tosspayments.com/reference#가상계좌-발급-요청)
-  
-payment-window : 통합결제창 샘플입니다.    
-  (결제창 연동하기 안의 카드, 가상계좌, 계좌이체, 휴대폰, 상품권)
+- [`/payment-virtualaccount-api`](https://github.com/tosspayments/payment-samples/tree/main/payment-virtualaccount-api): 가상계좌 발급 연동 샘플
+
+## 문의
+
+토스페이먼츠에서 제공하고 있는 모든 기능에 대한 문서는 https://docs.tosspayments.com 에서 확인할 수 있습니다.
+
+기능 및 구현에 대해 궁금한 점이 있다면 [1:1 채팅](https://discord.com/invite/VdkfJnknD9)이나 [토스페이먼츠 기술지원 팀 이메일](techsupport@tosspayments.com)로 문의해주세요.
