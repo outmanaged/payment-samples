@@ -16,6 +16,8 @@
   
 - [`/payment-virtualaccount-api`](https://github.com/tosspayments/payment-samples/tree/main/payment-virtualaccount-api): 가상계좌 발급 연동 샘플
 
+- [`/payment-window`](https://github.com/tosspayments/payment-samples/tree/main/payment-window): 결제창 연동 샘플
+
 ## 문의
 
 토스페이먼츠에서 제공하고 있는 모든 기능에 대한 문서는 https://docs.tosspayments.com 에서 확인할 수 있습니다.
