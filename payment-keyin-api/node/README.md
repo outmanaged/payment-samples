@@ -1,4 +1,4 @@
-# payment-payment-window/node
+# payment-keyin-api/node
 
 Node.js 를 이용한 결제창 샘플입니다. Express로 구성되었습니다.
 

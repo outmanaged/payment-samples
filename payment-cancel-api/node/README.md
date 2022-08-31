@@ -1,6 +1,6 @@
-# payment-payment-window/node
+# payment-cancel-api/node
 
-Node.js 를 이용한 결제창 샘플입니다. Express로 구성되었습니다.
+Node.js 를 이용한 카드사 결제창 샘플입니다. Express로 구성되었습니다.
 
 ## 실행 요구조건
 
@@ -13,7 +13,7 @@ Node.js 를 이용한 결제창 샘플입니다. Express로 구성되었습니�
 
 ```sh
 $ npm install
-$ npm start
+$ node app.js
 ```
 
 서버가 실행 된 후, `localhost:8080`으로 접속해서 테스트할 수 있습니다.
