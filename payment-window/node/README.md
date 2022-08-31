@@ -13,7 +13,7 @@ TossPayments 결제연동 Node.js 샘플 코드입니다. Express로 구성되�
 
 ```sh
 $ npm install
-$ npm start
+$ node app.js
 ```
 
 서버가 실행 된 후, `localhost:8080`으로 접속해서 테스트할 수 있습니다.
