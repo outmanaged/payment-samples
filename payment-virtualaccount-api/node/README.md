@@ -13,7 +13,7 @@ Node.js 를 이용한 결제창 샘플입니다. Express로 구성되었습니�
 
 ```sh
 $ npm install
-$ npm app.js
+$ node app.js
 ```
 
-서버가 실행 된 후, `localhost:8080/virtual_account/`으로 접속해서 테스트할 수 있습니다.
+서버가 실행 된 후, `http://localhost:8080/virtual_account/`로 접속해서 테스트할 수 있습니다.
