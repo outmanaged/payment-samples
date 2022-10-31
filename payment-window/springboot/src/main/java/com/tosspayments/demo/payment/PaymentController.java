@@ -1,5 +1,7 @@
 package com.tosspayments.demo.payment;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationConfig;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Controller;
@@ -56,7 +58,13 @@ public class PaymentController {
         JSONParser parser = new JSONParser();
         JSONObject jsonObject = (JSONObject) parser.parse(reader);
         responseStream.close();
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        Object jsonBeautifier = objectMapper.readValue(jsonObject.toJSONString(), Object.class);
+        String jsonBeautifierStr = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonBeautifier);
+
         model.addAttribute("responseStr", jsonObject.toJSONString());
+        model.addAttribute("responseStrJson", jsonBeautifierStr);
         System.out.println(jsonObject.toJSONString());
 
         model.addAttribute("method", (String) jsonObject.get("method"));

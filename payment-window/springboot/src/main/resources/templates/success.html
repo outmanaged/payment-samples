@@ -1,28 +1,79 @@
+<!-- 토스페이먼츠 결제 샘플 소스코드 -->
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<meta charset="UTF-8">
+<html lang="kr">
+
 <head>
-    <title>결제 성공</title>
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>토스페이먼츠 샘플페이지-결제결과</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <style>
+    @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+    body {font-family: 'Noto Sans KR', sans-serif;} 
+    .box_section { background-color: white; border-radius: 10px; box-shadow: 0 10px 20px rgb(0 0 0 / 1%), 0 6px 6px rgb(0 0 0 / 6%); margin-top: 30px; padding: 20px}
+  </style>
 </head>
 
+<body class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
 
-<body>
-    <th:block th:if="${#strings.equals(isSuccess, 'true')}">
-        <h1>결제 성공</h1>
-        <p>결과데이터 : <span th:text="${responseStr}"></span></p>
-        <p>orderName : <span th:text="${orderName}"></span></p>
-        <p>method : <span th:text="${method}"></span></p>
-        <tr th:if="${#strings.equals(method, '카드')}">cardNumber<td th:text="${cardNumber}"></td></tr>
-        <tr th:if="${#strings.equals(method, '가상계좌')}">accountNumber<td th:text="${accountNumber}"></td></tr>
-        <tr th:if="${#strings.equals(method, '계좌이체')}">bank<td th:text="${bank}"></td></tr>
-        <tr th:if="${#strings.equals(method, '휴대폰')}">customerMobilePhone<td th:text="${customerMobilePhone}"></td></tr>
-    </th:block>
-    <th:block th:if="${#strings.equals(isSuccess, 'false')}">
-        <h1>결제 실패</h1>
-        <p>에러메시지 : <span th:text="${message}"></span></p>
-        <p>에러코드 : <span th:text="${code}"></span></p>
-    </th:block>
+      <div class="col-md-6">
+        <!-- 결제 성공 시 -->
+        <th:block th:if="${#strings.equals(isSuccess, 'true')}">
+        <h2 style="margin-top:10px;  padding:20px 0px 10px 0px">
+        <img width="45px" src="https://static.toss.im/3d-emojis/u1F911-apng.png">
+          결제 성공
+        </h2>
+
+        <div class="box_section">
+          <div class="card-body">
+            <div class="gray">
+              <p>상품명 : <span th:text="${orderName}"></span></p>
+              <p>결제수단 : <span th:text="${method}"></span></p> (
+                  <tr th:if="${#strings.equals(method, '카드')}">cardNumber<td th:text="${cardNumber}"></td></tr>
+                  <tr th:if="${#strings.equals(method, '가상계좌')}">accountNumber<td th:text="${accountNumber}"></td></tr>
+                  <tr th:if="${#strings.equals(method, '계좌이체')}">bank<td th:text="${bank}"></td></tr>
+                  <tr th:if="${#strings.equals(method, '휴대폰')}">customerMobilePhone<td th:text="${customerMobilePhone}"></td></tr>
+                )</p>
+            </div>
+          </div>
+        </div> 
+
+          <div class="box_section">
+            <div class="card-body">
+              <div class="gray">
+                <b>Response Data :</b>
+                <pre>
+                <span th:text="${responseStrJson}"></span>
+              </pre>
+              </div>
+            </div>
+          </div>
+
+        <!-- 결제 실패 시 -->
+        </th:block>
+        <th:block th:if="${#strings.equals(isSuccess, 'false')}">       
+        <h2 style="margin-top:10px; padding:20px 0px 10px 0px">
+          <img width="45px" src="https://static.toss.im/3d-emojis/u1F975-apng.png">
+          결제 실패
+        </h2>
+
+        <div id="info" class="box_section">
+          <div class="card-body">
+            <div class="gray">
+              <p>에러메시지 : <span th:text="${message}"></span></p>
+              <p>에러코드: <span th:text="${code}"></span></p>
+            </div>
+          </div>
+        </div>
+      </th:block>
+      <div class="col-md-3"></div>
+      </div>
+    </div>
 </body>
+
 </html>
